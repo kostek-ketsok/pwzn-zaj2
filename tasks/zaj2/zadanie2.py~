@@ -26,19 +26,20 @@ def filter_animals(animal_list):
         if amin['genus'] not in wybrane:
             wybrane[amin['genus']] = [None, None]
    
-        samica, samiec = wybrane[amin['genus']] 
+        else: 
+            samica, samiec = wybrane[amin['genus']] 
         
-        if samica==None and amin['sex']=='female':
-            samica = amin
-        elif amin['sex']=='female':
-            if samica[1]>amin['mass']:
+            if samica==None and amin['sex']=='female':
                 samica = amin
-        if samiec==None and amin['sex']=='male':
-            samiec = amin
-        elif amin['sex']=='male':
-            if samiec[1]>amin['mass']:
-                samiec = amin  
-        #wybrane[amin['genus']] = [samica, samiec]
+            elif amin['sex']=='female':
+                if samica[1]>amin['mass']:
+                    samica = amin
+            if samiec==None and amin['sex']=='male':
+                samiec = amin
+            elif amin['sex']=='male':
+                if samiec[1]>amin['mass']:
+                    samiec = amin  
+            wybrane[amin['genus']] = [samica, samiec]
 
     return wybrane
     """
