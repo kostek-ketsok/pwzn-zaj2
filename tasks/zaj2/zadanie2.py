@@ -38,7 +38,7 @@ def filter_animals(animal_list):
         elif amin['sex']=='male':
             if samiec[1]>amin['mass']:
                 samiec = amin  
-        #wybrane[amin['genus']] = [samica, samiec]
+        wybrane[amin['genus']] = [samica, samiec]
 
     return wybrane
     """
